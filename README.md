@@ -1,5 +1,5 @@
-******Project Overview
-******This project implements a chatbot-based online food ordering system that allows customers to:
+## Project Overview
+This project implements a chatbot-based online food ordering system that allows customers to:
 
 Place new food orders by selecting items and quantities in natural language.
 
