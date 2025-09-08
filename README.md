@@ -1,18 +1,52 @@
-**Project Description
-This project involves building a chatbot that enables users to order food and track existing orders from an eatery. The chatbot is designed to provide a complete online ordering system directly on a website.
-**Key functionalities include:
-• Placing a new order: Users can initiate an order, add various food items with specified quantities (e.g., "give me two pav bhaji, one pizza"), review their selections, and finalise the order, which then calculates the total bill.
-• Tracking an order: Users can check the status of an existing order by providing an order ID (e.g., "track my order 41"), receiving updates like "in progress," "in transit," or "delivered".
-• Intelligent conversation: The chatbot can ask for missing information (such as quantity), respond when items are not on the menu (e.g., "Pani Puri"), and remember previous parts of the conversation using context.
-**Why this project is built
-This project was built to create a direct online ordering system for an eatery. The eatery needed a way to accept online orders to increase its income after its applications to large e-commerce platforms were rejected. A critical requirement for the project was achieving a fast "time to market", meaning the chatbot needed to be developed and released quickly.
-**Use Cases
-**The main use cases for this chatbot are:
-• Placing a New Order: A user can initiate a conversation to start a new food order, select desired items and quantities, and complete the transaction.
-• Tracking an Order: A user can inquire about the current status of an order they have already placed using an order ID.
-**Technologies Used
-**The project utilises several technical components to function:
-• Dialogflow ES (Essentials): This is the Natural Language Processing (NLP) platform that understands user input. It identifies the user's main goal (intents) and extracts specific information like food item or quantity (entities). Training phrases teach the model to recognise intents and entities. Dialogflow ES was chosen because it is cloud-based, offers many ready-to-use features for quick deployment, and is more cost-effective than Dialogflow CX, allowing for a faster product launch. Context is used to maintain the flow of conversation.
-• Python with FastAPI: This acts as the backend server. Dialogflow communicates with this backend via webhooks for "fulfillment" (dynamic responses). The FastAPI server handles dynamic actions, such as adding items to an order, saving orders to the database, or retrieving order statuses. A global Python dictionary (in_progress_orders), keyed by a unique session ID, temporarily stores a user's order during the conversation.
-• MySQL Database: This relational database stores all essential information. It includes tables for food item (menu details and prices), orders (placed order items and quantities), and order_tracking (order status updates).
-• ngrok: Used during local development, ngrok provides a secure HTTPS tunnel. This allows Dialogflow (which requires HTTPS for webhooks) to securely communicate with the locally running FastAPI server.
+Project Overview
+This project implements a chatbot-based online food ordering system that allows customers to:
+
+Place new food orders by selecting items and quantities in natural language.
+
+Track existing orders in real time using a unique order ID.
+
+Interact through intelligent conversations, where the bot handles missing details, unavailable menu items, and maintains context across messages.
+
+The system provides a complete digital ordering workflow, from order placement to tracking, directly on the eatery’s website—without relying on third-party delivery apps.
+
+Why This Project Was Built
+
+The eatery required a direct online ordering solution after being rejected by large e-commerce platforms. Key drivers included:
+
+Faster time-to-market – Deliver a working solution quickly to start accepting online orders.
+
+Revenue growth – Provide a new sales channel independent of aggregators.
+
+Customer convenience – Simplify ordering and tracking with a conversational interface.
+
+Use Cases
+
+Placing New Orders – Users initiate an order, add food items with quantities, review, and confirm. The system then calculates the total bill.
+
+Tracking Orders – Users enter an order ID and get real-time updates like “in progress,” “in transit,” or “delivered.”
+
+Conversational Ordering – The bot asks clarifying questions (e.g., missing quantities), responds to unavailable items, and remembers past inputs to ensure smooth interactions.
+
+Technologies Used
+
+Dialogflow ES – Natural Language Processing to detect intents (order, track) and extract entities (food item, quantity). Context ensures conversational flow.
+
+Python (FastAPI) – Backend server that processes webhook requests, manages in-progress orders, and communicates with the database.
+
+MySQL Database – Stores menu items, confirmed orders, and order-tracking statuses.
+
+Ngrok – Provides a secure HTTPS tunnel for local development, enabling Dialogflow to connect with the backend server.
+
+How This Project Is Useful
+
+For Businesses – A ready-to-use ordering solution that eliminates dependency on third-party apps.
+
+For Customers – A simple, intuitive way to order food and track deliveries.
+
+For Developers – A complete example of integrating NLP, backend APIs, and databases into a conversational AI system.
+
+For Research & Learning – Demonstrates real-world chatbot workflows, fulfillment, and database integration.
+
+✨ This README gives recruiters and developers enough detail to understand the value, scope, and technical depth of the project, while staying clean and structured.
+
+Do you want me to now add a “Getting Started” section (setup + usage commands) so it feels more like a polished GitHub project?
